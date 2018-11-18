@@ -14,6 +14,7 @@
 */
 
 /* WINDOW STYLES */
+/* The window itslef was given a background image that would repeat itself to fill up the entire browser window, with a fixed position so that when the user scrolls the image does not move along with them. The body margin is set to auto to stay centered within the browser window and is given a min and max width.*/
 
 html {
     height: 100%;
@@ -30,11 +31,13 @@ body {
     min-height: 100%;
     background-color: rgb(207, 201, 193);
     box-shadow: rgb(51, 51, 51) 15px 0px 25px, rgb(51, 51, 51) -15px 0px 25px;
+    perspective: 950px;
 }
 
 /* HEADER STYLES */
+/* The Browyer Realty logo is placed at the top of page within the header with a linear gradient background, it is also being rotated along the X-Axis to let it stand out more. The navigation menu at the top is floated left with a width of 100% of the body, allowing it to be stretched across it. The bottom of the navigation bar has an outset border that provides a little more depth to the menu. While hovering over the links, they gain text shadow along with the text color changing colors to match up with the logo color. */
 
-#htop {
+header {
     perspective: 550px;
 }
 
@@ -43,33 +46,38 @@ body #logo {
     transform: rotateX(25deg);
 }
 
-#nav1 {
+nav {
     float: left;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-bottom: solid black;
+    border-bottom: outset lightgrey;
     background-color: rgb(148, 148, 148);
 }
 
-#nav1 ul li {
+nav ul li {
     text-align: center;
     float: left;
     width: 25%;
     list-style-type: none;
 }
 
-#nav1 a {
+nav a {
     font-size: 1.05em;
     color: whitesmoke;
 }
 
-#nav1 a:hover {
+nav a:hover {
     color: blue;
     text-shadow: 5px 0px 15px black;
 }
 
+header {
+    background: linear-gradient(to bottom right, gray, whitesmoke);
+}
+  
 /* BODY STYLES */
+/* The h1 heading was aligned to the center of the page with some text shadow. The figure element is centered by using left and right auto margins. The image is given a high contrast filter, aswell as the top and right corners being rounded out by setting the border radius to 5%. The figcaption is given padding to extend it from the top and bottom. Information about the actual listin is set inside an aside element with a paragraph element containing the information. The aside element has rounded corners with a double border style running across. */
 
 h1 {
     color: white;
@@ -77,25 +85,25 @@ h1 {
     text-align: center;
     padding-top: 80px;
     padding-bottom: 40px;
-    text-shadow: 10px 0px 10px black;
+    text-shadow: 5px 0px 10px black;
 }
 
-figure {
+figure#listing {
     margin-right: auto;
     margin-left: auto;
     width: 50%;
-    perspective: 450px;
-    box-shadow: rgb(51, 51, 51) 20px 0px 25px, rgb(51, 51, 51) 0px 20px 25px;
 }
 
-figure img {
+figure#listing img {
     display: block;
     width: 100%;
     filter: contrast(2);
     -webkit-backdrop-filter: contrast(2);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 }
 
-figure figcaption {
+figure#listing figcaption {
     background-color: rgb(148, 148, 148);
     font-family: 'Palatino Linotype', Palatino, 'Times New Roman', serif;
     font-style: italic;
@@ -113,114 +121,86 @@ aside {
 }
 
 p {
-    background: radial-gradient(white, rgb(148, 148, 148), gray);
+    background: radial-gradient(white, gray);
     padding: 5px 5px;
     border: 7px black double;
-    border-radius: 20px
+    border-radius: 20px;
+    text-align: center
 }
 
 
 /* IMAGE STYLES */
+/* Images were set inside of a figure element while those figure elemenets were set inside a div element. The figure element were given a margin percentage of 0% and box shadow along the bottom and left or right side.  The figcaption was given some padding with a caption corresponding to the image itself. */
 
-#p2 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-
-}
-
-#p3 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p4 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p5 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p6 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p7 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p8 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#p9 {
-    display: block;
-    width: 25%;
-    float: left;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-}
-
-#nav2 {
-    float: left;
+/* 
+===========
+LEFT COLUMN
+===========
+*/
+div.leftcol img {
+	display: block;
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: rgb(148, 148, 148);
 }
 
-#nav2 ul li {
+div.leftcol figcaption {
+    background-color: rgb(148, 148, 148);
+    font-family: 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+    font-style: italic;
+    padding: 2px;
     text-align: center;
+    color: whitesmoke;
+    border-top: 2px solid grey;
+}
+
+div.leftcol figure {
+    padding: 0%;
+    margin-bottom: 30px; 
+    box-shadow: rgb(51, 51, 51) -15px 0px 25px, rgb(51, 51, 51) 0px 15px 25px;
+}
+
+div.leftcol {
     float: left;
     width: 25%;
-    list-style-type: none;
+    padding: 30px 30px 30px 30px;
+    transform: rotateY(25deg);
 }
 
-#nav2 a {
-    font-size: 1.05em;
+/* 
+============
+RIGHT COLUMN
+============
+*/
+
+div.rightcol img {
+    display: block;
+    width: 100%;
+}
+
+div.rightcol figcaption {
+    background-color: rgb(148, 148, 148);
+    font-family: 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
     color: whitesmoke;
+    border-top: 2px solid grey;
 }
 
-#nav2 a:hover {
-    color: blue;
-    text-shadow: 5px 0px 15px black;
+div.rightcol figure {
+    padding: 0%;
+    margin-bottom: 30px; 
+    box-shadow: rgb(51, 51, 51) 15px 0px 25px, rgb(51, 51, 51) 0px 15px 25px;
+}
+
+div.rightcol {
+    float: right;
+    width: 25%;
+    padding: 30px 30px 30px;
+    transform: rotateY(-25deg);
 }
 
 /* FOOTER STYLES */
+/* The footer has the same background color as every other nav/figcaption. While hovering over the 'Contact' text it'll turn the same as the links above in the navigation menu. */
 
 footer {
     background-color: rgb(148, 148, 148);
